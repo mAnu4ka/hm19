@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./stayl/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="left">
+            <h1>Ваши карты: <span class="name"></span></h1>
+        </div>
+        <div class="raight">
+            <div class="top">
+                <h1>Сумма от:</h1>
+                <input type="num" name="min">
+                <input type="num" name="max">
+                <select>
+                    <option value="VISA">VISA</option>
+                    <option value="UZCARD">UZCARD</option>
+                    <option value="master">master</option>
+                </select>
+                <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15.5" cy="9.5" r="8.5" stroke="black" stroke-width="2" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M16.0124 18.0171C13.3718 17.8931 9.42981 18.4188 6.10467 20.4448C2.70003 22.5193 0 26.1406 0 31.9999H2C2 26.88 4.29997 23.8865 7.14533 22.1528C10.0546 20.3801 13.5913 19.8997 15.9506 20.0164L16 19.0183L16.0532 20.0176C18.3988 19.8926 21.9229 20.4065 24.8264 22.3117C27.6684 24.1766 30 27.4234 30 32.9999H32C32 26.7526 29.3316 22.8758 25.9236 20.6396C22.6045 18.4617 18.6664 17.8884 16.0124 18.0171Z"
+                        fill="black" />
+                </svg>
+            </div>
+            <div class="bottom">
+                <h1>Перевести все в: </h1>
+                <select>
+                    <option value="$">$</option>
+                    <option value="Cум">Cум</option>
+                    <option value="euro">euro</option>
+                </select>
+            </div>
+        </div>
+    </header>
+    <div class="strelka2">
+        <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L7 6.73913L1 13" stroke="black" stroke-width="2" />
+        </svg>
+    </div>
+    <div class="cards">
+        
+    </div>
+    <div class="streka">
+        <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 1L2 5.78261L7 11" stroke="black" stroke-width="2" />
+        </svg>
+    </div>
+    <div class="crud">
+        <button class="create" data-but data-input="3"data-shit='create'  data-with='691px' data-haight='691px'>Добавить
+            карту</button>
+        <button class="delite" data-but data-input="1"data-shit='delete' data-with='691px' data-haight='691px'>Удалить
+            карту</button>
+        <button class="updete" data-but data-input="4"data-shit='upgret' data-with='528px' data-haight='736px'>Изменить
+            карту</button>
+        <button class="updete" data-but data-input="1"data-shit=''  data-with='528px' data-haight='736px'>Добавть
+            друга</button>
+    </div>
+    <div class="myferends">
+        <h1>Ваши друзья:</h1>
+        <div class="frends">
+            <div class="frend">
+                <div class="left">
+                    <img>
+                    <div class="text">
+                        <p>Akhmedov Anis</p>
+                        <span>10 карт</span>
+                    </div>
+                </div>
+                <div class="raight">
+                    <svg width="27" height="7" viewBox="0 0 27 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="3.47143" cy="3.49975" r="3.47143" fill="black" />
+                        <circle cx="13.5" cy="3.49975" r="3.47143" fill="black" />
+                        <circle cx="23.5286" cy="3.49975" r="3.47143" fill="black" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-modal"></div>
+    <div class="course-modal">
+        <div class="course-modal-mobil">
+            <form></form>
+        </div>
+    </div>
+    <div class="anims">
+        <p class="text__amin">Изменения успешно обновлены!</p>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type='module' src="./js/main2.js"></script>
+
+</html>
