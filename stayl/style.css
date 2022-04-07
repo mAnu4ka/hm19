@@ -26,8 +26,11 @@ body {
     font-family: 'Inter';
 }
 
-form h1 {
+.h11 {
     color: white;
+}
+
+form h1 {
     font-size: var(--font-s);
     font-weight: var(--font-w);
     line-height: var(--line-h);
@@ -39,11 +42,6 @@ form input {
     border-radius: 11px;
     padding: 14px 13px;
     width: 487px;
-}
-
-.log {
-    background-color: #fff;
-    color: white;
 }
 
 form {
@@ -374,11 +372,23 @@ canvas {
     font-weight: 400;
     font-size: 24px;
     line-height: 141.02%;
-    margin-top: 200px;
+    margin-top: 480px;
     width: 430px;
     padding: 13px 22px;
     background: #2FAE02;
     box-shadow: 0px 0px 9px 8px rgba(0, 255, 25, 0.25);
     border-radius: 11px;
     color: #FFFFFF
+}
+
+.grey {
+    display: none;
+    padding: 10px 15px;
+    background: #C4C4C4;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 141.02%;   
+}
+.block{
+    display: block !important;
 }

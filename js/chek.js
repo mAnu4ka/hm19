@@ -21,18 +21,18 @@ const chek = (arr) => {
         let fm = new FormData(form)
         Create_New_Task = {
             id: Math.random(),
-            crds:[]
+            crds: []
         }
         fm.forEach((a, b) => {
             let field = form.querySelector('*[name=' + b + ']')
             let counter_have_to = form.querySelectorAll('*[name]')
             Create_New_Task[b] = a
             for (const item of arr) {
-                let reg = document.querySelector('.reg')
                 if (Create_New_Task.email == item.email && Create_New_Task.password == item.password) {
-                    form.setAttribute('action' , 'index2')
+                    form.setAttribute('action', 'index2')
                     document.location = './index2.html'
-                    localStorage.setItem('user', item.id.toString)
+                    let num = item.id.toString()
+                    localStorage.setItem('user', num)
                     for (const items of counter_have_to) {
                         set_field_success(items, 'nice')
                     }

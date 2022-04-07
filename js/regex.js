@@ -3,6 +3,7 @@ const REGEX = (api) => {
     let counter = 0
     let Create_New_Task
     let good
+    let field
     let regexes = {
         email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
         number: /^[0-9]+$/,
@@ -28,11 +29,12 @@ const REGEX = (api) => {
         let fm = new FormData(form)
         Create_New_Task = {
             id: Math.random(),
-            crds:[]
+            crds: [],
+            frends: []
         }
         counter = 0
         fm.forEach((a, b) => {
-            let field = form.querySelector('*[name=' + b + ']')
+            field = form.querySelector('*[name=' + b + ']')
             counter_have_to = form.querySelectorAll('*[name]').length
             if (field.getAttribute('data-required') !== null) {
                 if (field.value.trim().length == 0) {
@@ -63,11 +65,27 @@ const REGEX = (api) => {
             }
         })
         if (counter == counter_have_to) {
-            axios.post(api, Create_New_Task)
-            let num = Create_New_Task.id.toString()
-            console.log(num);
-            localStorage.setItem('user', num)
-            document.location = './index2.html'
+            axios.get('http://localhost:3001/user')
+                .then(function (response) {
+                    chek(response.data)
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+            const chek = (arr) => {
+                for (const item of arr) {
+                    if (Create_New_Task.email !== item.email) {
+                        axios.post(api, Create_New_Task)
+                        let num = Create_New_Task.id.toString()
+                        localStorage.setItem('user', num)
+                        document.location = './index2.html'
+                    } else {
+                        let chldren = form.children
+                        set_field_success(chldren[1], 'bad')
+                        set_field_success(chldren[4], 'bad')
+                    }
+                }
+            }
         }
     }
 }

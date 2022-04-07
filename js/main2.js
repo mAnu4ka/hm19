@@ -1,4 +1,6 @@
 import anim from './modal.js'
+import frend from './frend.js'
+
 axios.get('http://localhost:3001/user')
     .then(function (response) {
         cheks(response.data)
@@ -10,6 +12,7 @@ axios.get('http://localhost:3001/user')
 let name = document.querySelector('.name')
 let strelka = document.querySelector('.strelka2')
 let strelka2 = document.querySelector('.streka')
+
 const cheks = (arr) => {
     let num = +localStorage.getItem('user')
     let find = arr.find(item => item.id == num)
@@ -21,7 +24,9 @@ const cheks = (arr) => {
         strelka.style.display = 'bloke'
         strelka2.style.display = 'bloke'
     }
-    anim(find)
+    anim(find, arr)
+    frend(find)
+    
     axios.get(`http://localhost:3001/user/${find.id}`)
         .then(function (response) {
             tupofuncriya(response.data)
@@ -30,6 +35,7 @@ const cheks = (arr) => {
             console.log(error);
         })
 }
+
 const tupofuncriya = (arr) => {
     let cards = document.querySelector('.cards')
     for (const item of arr.crds) {
